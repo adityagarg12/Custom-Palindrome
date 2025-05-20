@@ -22,10 +22,10 @@ The palindrome logic builds two cleaned sequences (one left-to-right, one right-
 ## Time & Space Complexity
 
 | Operation               | Time Complexity  | Space Complexity |
-|-------------------------|------------------|-------------------|
-| insert(char)            | O(1)             | O(n)              |
-| is_custom_palindrome()  | O(n²)*           | O(n)              |
-| __str__                 | O(n)             | O(n)              |
+|-------------------------|------------------|------------------|
+| insert(char)            | O(1)             | O(n)             |
+| is_custom_palindrome()  | O(n²)*           | O(n)             |
+| \_\_str\_\_()           | O(n)             | O(n)             |
 
 \* Due to the use of a string to store "seen" characters and using `in` operator repeatedly (`O(n)` each time). Could be optimized with sets if allowed.
 
