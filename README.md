@@ -1,6 +1,6 @@
 # Doubly Linked List - Custom Palindrome Checker
 
-## 🔍 Problem Summary
+## Problem Summary
 
 Design a custom doubly linked list without using built-in data structures to check whether a sequence of characters forms a *custom palindrome*. A sequence is considered a custom palindrome if:
 - It reads the same forwards and backwards,
@@ -8,21 +8,18 @@ Design a custom doubly linked list without using built-in data structures to che
 - Ignores all **vowels** (`a, e, i, o, u`),
 - Ignores **repeated characters** from both left and right.
 
-## 🧠 Approach Used
+## Approach Used
 
-- A `Node` class is defined for each character in the list.
-- A `DoublyLinkedList` class manages insertion and traversal of characters.
-- During palindrome check:
-  - Two cleaned strings are built:
-    - One from **left to right**
-    - One from **right to left**
-  - While building, the algorithm:
-    - Converts characters to lowercase
-    - Skips vowels
-    - Skips characters already seen in that direction
-- If both cleaned sequences are equal, the sequence is a custom palindrome.
+- **`node.py`**: Defines the `Node` class, representing each character in the list.
+- **`DoublyLinkedList.py`**: Defines the `DoublyLinkedList` class with methods to:
+  - Insert characters
+  - Build cleaned sequences (left-to-right and right-to-left)
+  - Check for custom palindrome
+- **`main.py`**: Accepts user input, inserts characters into the list, and prints whether the sequence satisfies the custom palindrome rules.
 
-## ⏱️ Time & Space Complexity
+The palindrome logic builds two cleaned sequences (one left-to-right, one right-to-left) and compares them for equality.
+
+## Time & Space Complexity
 
 | Operation               | Time Complexity  | Space Complexity |
 |-------------------------|------------------|-------------------|
@@ -32,7 +29,7 @@ Design a custom doubly linked list without using built-in data structures to che
 
 \* Due to the use of a string to store "seen" characters and using `in` operator repeatedly (`O(n)` each time). Could be optimized with sets if allowed.
 
-## 🧪 Sample Test Cases
+## Sample Test Cases
 
 | Input      | Output |
 |------------|--------|
@@ -45,7 +42,19 @@ Design a custom doubly linked list without using built-in data structures to che
 
 > Note: Sample outputs are based on strict enforcement of the three rules.
 
-## 🚫 Constraints
+## Constraints
 
 - Do not use built-in data structures like `list`, `deque`, `set`, or slicing.
 - No use of `[::-1]`, `.reverse()`, or similar shortcuts.
+
+## How to Run
+
+1. Ensure all three files are in the same directory:
+   - `node.py`
+   - `DoublyLinkedList.py`
+   - `main.py`
+
+2. Run the program:
+
+```bash
+python main.py
